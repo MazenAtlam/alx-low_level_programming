@@ -1,4 +1,4 @@
-#include <stdio>
+#include <stdio.h>
 
 /**
  * main - Entry point
@@ -10,9 +10,9 @@
 
 int main(void)
 {
-	char alph[] = {abcdefghijklmnopqrstuvwxyz};
+	char alph[] = "abcdefghijklmnopqrstuvwxyz";
 	int i = 25;
-	
+
 	while (i >= 0)
 	{
 		putchar (alph[i]);
@@ -21,4 +21,4 @@ int main(void)
 	putchar ('\n');
 
 	return (0);
-}	
+}
