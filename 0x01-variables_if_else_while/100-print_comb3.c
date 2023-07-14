@@ -12,7 +12,7 @@ int main(void)
 {
 	int i = 0, j = 1;
 
-	while (i <= 9)
+	while (i <= 8)
 	{
 		while (j <= 9)
 		{
@@ -30,6 +30,7 @@ int main(void)
 			j++;
 		}
 		i++;
+		j = i + 1;
 	}
 	putchar('\n');
 
