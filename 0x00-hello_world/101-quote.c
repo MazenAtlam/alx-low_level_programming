@@ -4,7 +4,7 @@
  * main - Entry point
  *
  * Description: A C program that prins using write function
- * 		write(int fildes, const void *buf, size_t nbytes);
+ *		write(int fildes, const void *buf, size_t nbytes);
  *
  * Return: Always 1 (Not success)
 */
