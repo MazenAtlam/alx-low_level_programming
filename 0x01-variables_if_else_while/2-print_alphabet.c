@@ -10,7 +10,7 @@
 
 int main(void)
 {
-	char alph[] = {abcdefghijklmnopqrstuvwxyz};
+	char alph[] = "abcdefghijklmnopqrstuvwxyz";
 	int i = 0;
 
 	while (i < 26)
