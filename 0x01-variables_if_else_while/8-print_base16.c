@@ -1,4 +1,4 @@
-#include <stdio>
+#include <stdio.h>
 
 /**
  * main - Entry point
@@ -11,14 +11,14 @@
 int main(void)
 {
 	int i = 48;
-	
+
 	while (i <= 102)
 	{
 		putchar (i);
-		
+
 		if (i == 57)
 		{
-			i += 39
+			i += 39;
 		} else
 		{
 			i++;
@@ -27,4 +27,4 @@ int main(void)
 	putchar ('\n');
 
 	return (0);
-}	
+}
