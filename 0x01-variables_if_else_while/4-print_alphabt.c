@@ -1,18 +1,18 @@
-#include <stdio>
+#include <stdio.h>
 
 /**
  * main - Entry point
  *
- * Description: A C program that prints the alphabet except q and e in lowercase, followed by a new line
+ * Description: A C program that prints the alphabet without e&q in lowercase
  *
  * Return: Always 0 (Success)
 */
 
 int main(void)
 {
-	char alph[] = {abcdfghijklmnoprstuvwxyz};
+	char alph[] = "abcdfghijklmnoprstuvwxyz";
 	int i = 0;
-	
+
 	while (i < 24)
 	{
 		putchar (alph[i]);
@@ -21,4 +21,4 @@ int main(void)
 	putchar ('\n');
 
 	return (0);
-}	
+}
