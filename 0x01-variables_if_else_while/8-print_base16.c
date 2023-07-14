@@ -18,7 +18,7 @@ int main(void)
 
 		if (i == 57)
 		{
-			i += 39;
+			i += 40;
 		} else
 		{
 			i++;
