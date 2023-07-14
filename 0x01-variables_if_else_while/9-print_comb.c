@@ -1,21 +1,21 @@
-#include <stdio>
+#include <stdio.h>
 
 /**
  * main - Entry point
  *
- * Description: A C program that prints all possible combinations of single-digit numbers
+ * Description: A C program that prints all combinations of single-digits
  *
  * Return: Always 0 (Success)
 */
 
 int main(void)
 {
-	int i = 0;
-	
-	while (i < 10)
+	int i = 48;
+
+	while (i <= 57)
 	{
 		putchar (i);
-		if (i != 9)
+		if (i != 57)
 		{
 			putchar (',');
 			putchar (' ');
@@ -25,4 +25,4 @@ int main(void)
 	putchar ('\n');
 
 	return (0);
-}	
+}
