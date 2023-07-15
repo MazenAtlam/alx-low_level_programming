@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 /**
  * main - Entry point
  *
@@ -6,44 +7,33 @@
  *
  * Return: Always 0 (Success)
 */
+
 int main(void)
 {
-	int i = 0, j = 0, k = 0, z = 0;
+	int i = 0, j = 1;
 
-	while (i <= 9)
+	while (i <= 99)
 	{
-		while (j <= 8)
+		while (j <= 99)
 		{
-			while (k <= 9)
+			if (i != j)
 			{
-				while (z <= 9)
+				putchar((i / 10) + 48);
+				putchar((i % 10) + 48);
+				putchar(' ');
+				putchar((j / 10) + 48);
+				putchar((j % 10) + 48);
+
+				if (i != 98 ||  j != 99)
 				{
-					if (i != k && j != z)
-					{
-						putchar(i + 48);
-						putchar(j + 48);
-						putchar(' ');
-						putchar(k + 48);
-						putchar(z + 48);
-					if (i != 9 || j != 8 || k != 9 || z != 9)
-					{
-						putchar(',');
-						putchar(' ');
-					}
-					}
-					z++;
+					putchar(',');
+					putchar(' ');
 				}
-				k++;
-				z = 0;
 			}
 			j++;
-			k = 0;
-			z = 0;
 		}
 		i++;
-		j = 0;
-		k = 0;
-		z = 0;
+		j = i + 1;
 	}
 	putchar('\n');
 	return (0);
