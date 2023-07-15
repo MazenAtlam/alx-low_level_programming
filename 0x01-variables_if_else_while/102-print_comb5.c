@@ -18,7 +18,7 @@ int main(void)
 			{
 				while (z <= 9)
 				{
-					if (i < k && j < z || i = k && j != z)
+					if (i != k && j != z)
 					{
 						putchar(i + 48);
 						putchar(j + 48);
