@@ -11,11 +11,12 @@
 
 void print_alphabet_x10(void)
 {
-	int alph = 97;
 	int i;
 
 	for (i = 0; i < 10; i++)
 	{
+		int alph = 97;
+
 		while (alph != 122)
 		{
 			_putchar(alph);
