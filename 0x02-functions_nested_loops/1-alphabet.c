@@ -1,16 +1,20 @@
 #include "main.h"
 
 /**
- * main - Entry point
+ * print_alphabet - writes the alphabet, in lowercase
+ *			, followed by a new line
  *
- * Description: A C program that prints the alphabet, in lowercase
- *			, using prototype print_alphabet
- *
- * Return: Always 0 (Success)
-*/
+ * Return: Null
+ */
 
-int main(void)
+void print_alphabet(void)
 {
-	print_alphabet();
-	return (0);
+	int alph = 97;
+
+	while (alph == 122)
+	{
+		_putchar(alph);
+		alph++;
+	}
+	_putchar('\n');
 }
