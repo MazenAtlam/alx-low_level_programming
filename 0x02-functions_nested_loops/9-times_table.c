@@ -16,23 +16,26 @@ void times_table(void)
 		{
 			int a = row * column;
 
-			if (a > 9)
+			if (a > 9 && column != 0)
 			{
 				int fdigit = a / 10;
 				int sdigit = a % 10;
 
+				_putchar(',');
+				_putchar(' ');
 				_putchar('0' + fdigit);
 				_putchar('0' + sdigit);
 			}
-			else
-			{
-				_putchar('0' + a);
-			}
-			if (column != 9)
+			else if (a <= 9 && column != 0)
 			{
 				_putchar(',');
 				_putchar(' ');
 				_putchar(' ');
+				_putchar('0' + a);
+			}
+			else
+			{
+				_putchar('0' + a);
 			}
 		}
 		_putchar('\n');
