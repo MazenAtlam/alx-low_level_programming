@@ -16,7 +16,18 @@ void times_table(void)
 		{
 			int a = row * column;
 
-			_putchar('0' + a);
+			if (a > 9)
+			{
+				int fdigit = a / 10;
+				int sdigit = a % 10;
+
+				_putchar('0' + fdigit);
+				_putchar('0' + sdigit);
+			}
+			else
+			{
+				_putchar('0' + a);
+			}
 			if (column != 9)
 			{
 				_putchar(',');
