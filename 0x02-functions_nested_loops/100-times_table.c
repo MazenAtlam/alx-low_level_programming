@@ -47,5 +47,5 @@ void print_times_table(int n)
 					_putchar(' ');
 					_putchar('0' + a); } else
 				{
-					_putchar('0' + a); }
-			_putchar('\n'); }	}	}	}
+					_putchar('0' + a); }	}
+	_putchar('\n'); }	}	}
