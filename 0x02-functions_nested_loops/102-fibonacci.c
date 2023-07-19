@@ -11,14 +11,14 @@
 
 int main(void)
 {
-	long long int i;
+	unsigned long i;
 	int j = 2;
 
-	long long int a[50];
+	unsigned long a[50];
 
 	a[0] = 1;
 	a[1] = 2;
-	printf("%lld, %lld, ", a[0], a[1]);
+	printf("%lu, %lu, ", a[0], a[1]);
 	for (i = 3; j <= 49; i++)
 	{
 		if (i == a[j - 1] + a[j - 2])
@@ -26,11 +26,11 @@ int main(void)
 			a[j] = i;
 			if (j == 49)
 			{
-				printf("%lld\n", a[j]);
+				printf("%lu\n", a[j]);
 			}
 			else
 			{
-				printf("%lld, ", a[j]);
+				printf("%lu, ", a[j]);
 			}
 			j++;
 		}
