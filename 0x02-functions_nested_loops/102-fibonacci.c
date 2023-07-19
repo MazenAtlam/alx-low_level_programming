@@ -27,18 +27,27 @@ int main(void)
 		{
 			num /= 10;
 		}
-		if ((i == a[j - 1] + a[j - 2]) && ((num == 1) || (num == 2)))
+		if (i == a[j - 1] + a[j - 2])
 		{
-			a[j] = i;
-			if (j == 49)
+			int num = i;
+
+			while (num >= 10)
 			{
-				printf("%d\n", a[j]);
+				num /= 10;
 			}
-			else
+			if ((num == 1) || (num == 2))
 			{
-				printf("%d, ", a[j]);
+				a[j] = i;
+				if (j == 49)
+				{
+					printf("%d\n", a[j]);
+				}
+				else
+				{
+					printf("%d, ", a[j]);
+				}
+				j++;
 			}
-			j++;
 		}
 	}
 	return (0);
