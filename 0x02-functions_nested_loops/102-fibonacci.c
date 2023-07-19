@@ -14,12 +14,12 @@ int main(void)
 	int i;
 	int j = 2;
 
-	int a[];
+	int a[50];
 
 	a[0] = 0;
 	a[1] = 1;
 	printf("%d, %d, ", a[0], a[1]);
-	for (i = 1; j <= 50; i++)
+	for (i = 1; j <= 49; i++)
 	{
 		int num = i;
 
@@ -30,7 +30,7 @@ int main(void)
 		if ((i == a[j - 1] + a[j - 2]) && ((num == 1) || (num == 2)))
 		{
 			a[j] = i;
-			if (j == 50)
+			if (j == 49)
 			{
 				printf("%d\n", a[j]);
 			}
