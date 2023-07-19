@@ -11,28 +11,24 @@
 
 int main(void)
 {
-	unsigned long i;
-	int j = 2;
+	int i;
+	unsigned long ldigit, lsum, sum;
 
-	unsigned long a[50];
-
-	a[0] = 1;
-	a[1] = 2;
-	printf("%lu, %lu, ", a[0], a[1]);
-	for (i = 3; j <= 49; i++)
+	ldigit = 1;
+	lsum = 2;
+	printf("%lu, %lu, ", ldigit, lsum);
+	for (i = 3; i <= 50; i++)
 	{
-		if (i == a[j - 1] + a[j - 2])
+		sum = lsum + ldigit;
+		ldigit = lsum;
+		lsum = sum;
+		if (i == 50)
 		{
-			a[j] = i;
-			if (j == 49)
-			{
-				printf("%lu\n", a[j]);
-			}
-			else
-			{
-				printf("%lu, ", a[j]);
-			}
-			j++;
+			printf("%lu\n", sum);
+		}
+		else
+		{
+			printf("%lu, ", sum);
 		}
 	}
 	return (0);
