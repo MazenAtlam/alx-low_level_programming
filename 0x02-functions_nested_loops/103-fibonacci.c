@@ -5,14 +5,13 @@
  *
  * Description: A C program that prints the sum of the even-valued terms
  *	, in the Fibonacci sequence whose values do not exceed 4,000,000
- *				
  *
  * Return: Always 0 (Success)
 */
 
 int main(void)
 {
-	unsigned long ldigit, lsum, sum;
+	unsigned long ldigit, lsum, sum, esum;
 
 	ldigit = 1;
 	lsum = 2;
@@ -28,5 +27,6 @@ int main(void)
 		ldigit = lsum;
 		lsum = sum;
 	}
+	printf("%lu\n", esum);
 	return (0);
 }
