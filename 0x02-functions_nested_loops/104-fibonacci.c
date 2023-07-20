@@ -10,7 +10,7 @@
 
 int main(void)
 {
-	unsigned long fd = 1, sd = 2, i = 2, k, o_fd, o_sd, sum, o_sum;
+	unsigned long fd = 1, sd = 2, i = 2, z = 1000000000, k, o_fd, o_sd, sum, o_sum;
 
 	printf("%lu, %lu, ", fd, sd);
 	while (i <= 50)
@@ -21,10 +21,10 @@ int main(void)
 		printf("%lu, ", sum);
 		i++;
 	}
-	o_fd = fd / 100000;
-	fd %= 100000;
-	o_sd = sd / 100000;
-	sd %= 100000;
+	o_fd = fd / z;
+	fd %= z;
+	o_sd = sd / z;
+	sd %= z;
 	for (i = 51; i <= 98; i++)
 	{
 		sum = fd + sd;
@@ -36,15 +36,15 @@ int main(void)
 		if (i == 98)
 		{
 			k = sum;
-			sum = ((o_sum * 100000) + sum) % 100000;
-			o_sum = ((o_sum * 100000) + k) / 100000;
+			sum = ((o_sum * z) + sum) % (z / 10000);
+			o_sum = ((o_sum * z) + k) / (z / 10000);
 			printf("%lu%lu\n", o_sum, sum);
 		}
 		else
 		{
 			k = sum;
-			sum = ((o_sum * 100000) + sum) % 100000;
-			o_sum = ((o_sum * 100000) + k) / 100000;
+			sum = ((o_sum * z) + sum) % (z / 10000);
+			o_sum = ((o_sum * z) + k) / (z / 10000);
 			printf("%lu%lu, ", o_sum, sum);
 	}	}
 	return (0);
