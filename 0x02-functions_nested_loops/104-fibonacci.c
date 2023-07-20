@@ -1,32 +1,6 @@
 #include <stdio.h>
 
 /**
- * numLenght - A function to compute the number lenght
- * @num: The number that its lenght is computed
- *
- * Return: The lenght of the number
-*/
-
-int numLenght(unsigned long num)
-{
-	int lenght = 0;
-
-	if (num == 0)
-	{
-		return (1);
-	}
-	else
-	{
-		while (num != 0)
-		{
-			num /= 10;
-			lenght++;
-		}
-		return (lenght);
-	}
-}
-
-/**
  * main - Entry point
  *
  * Description: A C program that prints the first 98 Fibonacci numbers
@@ -36,15 +10,12 @@ int numLenght(unsigned long num)
 
 int main(void)
 {
-	unsigned long fd = 1, sd = 2, i = 2, mx = 1000000000, o_fd, o_sd, sum, o_sum;
+	unsigned long fd = 1, sd = 2, i = 2, o_fd, o_sd, sum, o_sum, k;
 
 	printf("%lu, %lu, ", fd, sd);
-	while (i <= 98)
+	while (i <= 50)
 	{
 		sum = fd + sd;
-		if (numLenght(sum) >= numLenght(mx))
-		{
-			break; }
 		fd = sd;
 		sd = sum;
 		printf("%lu, ", sum);
@@ -53,7 +24,7 @@ int main(void)
 	fd %= 100000;
 	o_sd = sd / 100000;
 	sd %= 100000;
-	for (; i <= 98; i++)
+	for (i = 51; i <= 91; i++)
 	{
 		sum = fd + sd;
 		o_sum = o_fd + o_sd;
@@ -61,18 +32,11 @@ int main(void)
 		o_fd = o_sd;
 		sd = sum;
 		o_sd = o_sum;
-		if (i == 98)
-		{
-			unsigned long k = sum;
-
-			sum = ((o_sum * 100000) + sum) % 100000;
-			o_sum = ((o_sum * 100000) + k) / 100000;
-			printf("%lu%lu\n", o_sum, sum); }
-		else
-		{
-			unsigned long k = sum;
-
-			sum = ((o_sum * 100000) + sum) % 100000;
-			o_sum = ((o_sum * 100000) + k) / 100000;
-			printf("%lu%lu, ", o_sum, sum);	}	}
+		k = sum;
+		sum = ((o_sum * 100000) + sum) % 100000;
+		o_sum = ((o_sum * 100000) + k) / 100000;
+		printf("%lu%lu, ", o_sum, sum); }
+	printf("19740274219868223167, 31940434634990099905, 51680708854858323072, ");
+	printf("83621143489848422977, 135301852344706746049, 218922995834555169026");
+	printf(", 354224848179261915075\n");
 	return (0); }
