@@ -10,7 +10,7 @@
 
 int main(void)
 {
-	unsigned long fd = 1, sd = 2, i = 2, z = 1000000000, k, o_fd, o_sd, sum, o_sum;
+	unsigned long fd = 1, sd = 2, i = 2, z = 100000000, k, o_fd, o_sd, sum, o_sum;
 
 	printf("%lu, %lu, ", fd, sd);
 	while (i <= 50)
