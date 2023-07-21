@@ -51,13 +51,13 @@ void print_number(int n)
 	{
 		num = n / denom;
 		n %= denom;
-		_putchar('0' + num);
+		_putchar(48 + num);
 		denom /= 10;
 		if (numLenght(n) != numLenght(denom))
 		{
-			_putchar('0');
+			_putchar(48);
 			denom /= 10;
 		}
 	}
-	_putchar('0' + n);
+	_putchar(48 + n);
 }
