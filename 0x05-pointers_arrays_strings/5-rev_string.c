@@ -26,34 +26,6 @@ int _strlen(char *s)
 }
 
 /**
- * _strcpy - A function that copies a string pointed to
- * @dest: The returned string
- * @src: The sring to be copied
- *
- * Return: The pointer to dest
-*/
-
-char *_strcpy(char *dest, char *src)
-{
-	int i = 0;
-
-	while (1)
-	{
-		if (src[i] != '\0')
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		else
-		{
-			dest[i] = '\0';
-			break;
-		}
-	}
-	return (dest);
-}
-
-/**
  * rev_string - A function that reverses a string
  * @s: The string
  *
@@ -62,13 +34,25 @@ char *_strcpy(char *dest, char *src)
 
 void rev_string(char *s)
 {
-	int lenght = _strlen(s), j = lenght - 1, i;
-	char *ch1 = "", *ch2;
+	int lenght = _strlen(s), j = lenght - 1, i = 0;
+	char ch[446];
 
-	ch2 = _strcpy(ch1, s);
+	while (1)
+	{
+		if (s[i] != '\0')
+		{
+			ch[i] = s[i];
+			i++;
+		}
+		else
+		{
+			ch[i] = '\0';
+			break;
+		}
+	}
 	for (i = 0; i < lenght; i++)
 	{
-		s[i] = ch2[j];
+		s[i] = ch[j];
 		j--;
 	}
 }
