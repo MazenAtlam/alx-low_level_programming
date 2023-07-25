@@ -35,11 +35,12 @@ int _strlen(char *s)
 void rev_string(char *s)
 {
 	int lenght = _strlen(s), j = lenght - 1, i;
-	char *ch = s;
+	char ch;
 
 	for (i = 0; i < lenght; i++)
 	{
-		s[i] = ch[j];
+		ch = s[j];
+		s[i] = ch;
 		j--;
 	}
 }
