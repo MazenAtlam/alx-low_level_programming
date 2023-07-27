@@ -7,8 +7,9 @@
  * Return: A pointer of the called string
 */
 
-char *string_toupper(char *str)
+char *string_toupper(char *)
 {
+	char *str;
 	int i = 0;
 
 	while (str[i] = '\0')
