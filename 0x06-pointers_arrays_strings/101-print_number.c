@@ -36,11 +36,16 @@ int numLength(int num)
 void print_number(int n)
 {
 	int digit, denom = 1, zeros = numLength(n) - 1;
+	unsigned int num;
 
 	if (n < 0)
 	{
-		n = n * -1;
+		num = n * -1;
 		_putchar('-');
+	}
+	else
+	{
+		num = n;
 	}
 	while (zeros != 0)
 	{
@@ -49,11 +54,11 @@ void print_number(int n)
 	}
 	while (denom != 0)
 	{
-		digit = n / denom;
-		n = n % denom;
+		digit = num / denom;
+		num = num % denom;
 		denom = denom / 10;
 		_putchar(digit + '0');
-		if (numLength(n) < numLength(denom))
+		if (numLength(num) < numLength(denom))
 		{
 			_putchar('0');
 			denom = denom / 10;
