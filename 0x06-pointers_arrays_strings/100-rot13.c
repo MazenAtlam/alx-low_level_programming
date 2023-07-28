@@ -11,7 +11,7 @@ char *rot13(char *str)
 {
 	int i = 0;
 	char s[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	char pass[] = "noqprstuvwxyzabcdefghijklmNOQPRSTUVWXYZABCDEFGHIJKLM";
+	char pass[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
 	while (str[i] != '\0')
 	{
@@ -22,6 +22,7 @@ char *rot13(char *str)
 			if (str[i] == s[j])
 			{
 				str[i] = pass[j];
+				break;
 			}
 			j++;
 		}
