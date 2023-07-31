@@ -1,6 +1,22 @@
 #include "main.h"
 
 /**
+ * str_length - A function that gets the length of a string
+ * @s: The string
+ *
+ * Return: The length
+*/
+
+int str_length(char *s)
+{
+	int i;
+
+	for (i = 0; s[i] != '\0'; i++)
+		;
+	return (i - 1);
+}
+
+/**
  * _strstr - A function that locates a substring
  * @haystack: The string to be checked
  * @needle: The substring
@@ -11,9 +27,9 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	int i, j, k;
+	int i, j, k, length = str_length(haystack);
 
-	for (i = 0; haystack[i] != '\0'; i++)
+	for (i = 0; i < length; i++)
 	{
 		while (haystack[i] == '\0')
 		{
