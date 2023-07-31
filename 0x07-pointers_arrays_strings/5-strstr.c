@@ -28,33 +28,18 @@ int str_length(char *s)
 
 char *_strstr(char *haystack, char *needle)
 {
-	int i, k, length = str_length(needle);
+	int i, j = 0, k, length = str_length(needle);
 	char *str;
 
 	for (i = 0; haystack[i] != '\0'; i++)
 	{
-		int j = 0;
-
-		if (haystack[i] == needle[j])
+		while (haystack[i] == needle[j])
 		{
-			k = i;
-			for (j = 0; needle[j] != '\0'; j++)
+			if (needle[j] == '\0')
 			{
-				if (haystack[k] != needle[j])
-				{
-					break;
-				}
-				else
-				{
-					str[j] = haystack[k];
-					counter++;
-				}
-				k++;
+				return (needle);
 			}
-			if (counter == length)
-			{
-				return (str);
-			}
+			i++;
 		}
 	}
 
