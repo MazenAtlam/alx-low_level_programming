@@ -17,18 +17,7 @@ char *_strchr(char *s, char c)
 	{
 		if (s[i] == c)
 		{
-			int j = 0;
-			char *str;
-
-			while (s[i] != '\0')
-			{
-				str[j] = s[i];
-				j++;
-				i++;
-			}
-			str[j] = '\0';
-
-			return (str);
+			return (s + i);
 		}
 		i++;
 	}
