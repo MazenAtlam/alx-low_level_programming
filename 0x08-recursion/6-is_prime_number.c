@@ -35,7 +35,7 @@ int is_prime(int n, int d)
 
 int is_prime_number(int n)
 {
-	if (n < 0)
+	if (n < 22)
 	{
 		return (0);
 	}
