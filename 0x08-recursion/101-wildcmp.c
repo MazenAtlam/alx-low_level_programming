@@ -75,28 +75,25 @@ char *move_index(char *s1, char *s2)
 
 int wildcmp(char *s1, char *s2)
 {
-	int ret = 1;
+	int k = 0, ret = 1;
 
-	if ((s1[0] != '\0' && s2[0] == '\0') || (s1[0] == '\0' && s2[0] != '\0'))
-	{
-		return (0);
-	}
-	else
+	if (s1[0] == '\0' && s2[0] == '\0')
 	{
 		return (1);
 	}
 	if (s2[0] == '*')
 	{
+		k = 1;
 		s2 = astric_pass(s2);
+		if (s2[0] == '\0')
+		{
+			return (1);
+		}
 		ret = check_index(s1, s2);
 		if (ret == 1)
-		{
-			s1 = move_index(s1, s2);
-		}
+		{	s1 = move_index(s1, s2);	}
 		else
-		{
-			return (0);
-		}
+		{	return (0);	}
 	}
 	if (s1[0] == s2[0])
 	{
@@ -104,11 +101,16 @@ int wildcmp(char *s1, char *s2)
 		s2++;
 		ret = ret * wildcmp(s1, s2);
 	}
-	else
+	else if (k == 1)
 	{
-		ret = 0;
-		return (0);
+		ret = check_index(s1, s2);
+		if (ret == 1)
+		{	s1 = move_index(s1, s2);	}
+		else
+		{	return (0);	}
 	}
+	else
+	{	return (0);	}
 
 	return (ret);
 }
