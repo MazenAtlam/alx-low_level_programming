@@ -17,22 +17,25 @@ int main(int argc, char *argv[])
 
 	if (argc < 2)
 	{
-		printf("0");
+		printf("0\n");
 	}
-	for (i = 1; i < argc; i++)
+	else
 	{
-		for (j = 0; argv[i][j] != '\0'; j++)
+		for (i = 1; i < argc; i++)
 		{
-			if (argv[i][j] < 48 || argv[i][j] > 57)
+			for (j = 0; argv[i][j] != '\0'; j++)
 			{
-				printf("Error\n");
+				if (argv[i][j] < 48 || argv[i][j] > 57)
+				{
+					printf("Error\n");
 
-				return (1);
+					return (1);
+				}
 			}
+			sum += atoi(argv[i]);
 		}
-		sum += atoi(argv[i]);
+		printf("%d\n", sum);
 	}
-	printf("%d\n", sum);
 
 	return (0);
 }
