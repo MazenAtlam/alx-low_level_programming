@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 
 	if (argc < 2)
 	{
-		putchar('0');
+		printf("0");
 	}
 	for (i = 1; i < argc; i++)
 	{
@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 		{
 			if (argv[i][j] < 48 || argv[i][j] > 57)
 			{
-				puts("Error\n");
+				printf("Error\n");
 
 				return (1);
 			}
