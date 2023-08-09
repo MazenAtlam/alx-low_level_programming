@@ -23,7 +23,10 @@ int **alloc_grid(int width, int height)
 		if (square[i] == NULL)
 		{
 			while (i >= 0)
+			{
 				free(square[i]);
+				i--;
+			}
 			free(square);
 
 			return (NULL);
