@@ -14,17 +14,22 @@ int **alloc_grid(int width, int height)
 	int **square;
 	int i, j;
 
-	square = malloc(width * height * sizeof(int));
+	square = malloc(height * sizeof(*square));
 	if (square == NULL || width <= 0 || height <= 0)
 		return (NULL);
 	for (i = 0; i < height; i++)
 	{
-		square[i] = malloc(sizeof(*square) * width);
-		if ()
-		for (j = 0; j < width; j++)
+		square[i] = malloc(sizeof(int) * width);
+		if (square[i] == NULL)
 		{
-			square[i][j] = 0;
+			while (i >= 0)
+				free(square[i]);
+			free(square);
+
+			return (NULL);
 		}
+		for (j = 0; j < width; j++)
+			square[i][j] = 0;
 	}
 
 	return (square);
