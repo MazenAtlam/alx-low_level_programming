@@ -31,21 +31,21 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 
 	if (ptr == NULL)
 	{
-		free(prt);
+		free(ptr);
 
 		return (new);
 	}
 
 	if (new_size > old_size)
 	{
-		for (i = 0; i < old_size / sizeof(ptr[0]); i++)
-			new[i] = ptr[i];
+		for (i = 0; i < old_size; i++)
+			*((char*) new + i) = *((char*) ptr + i);
 	}
 	else
 	{
-		for (i = 0; i < new_size / sizeof(ptr[0]); i++)
-			new[i] = ptr[i];
-		prt = &ptr[i];
+		for (i = 0; i < new_size; i++)
+			*((char*) new + i) = *((char*) ptr + i);
+		ptr = &(*((char*) ptr + i));
 	}
 
 	free(ptr);
