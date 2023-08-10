@@ -8,7 +8,7 @@
  * Return: The length of The string
 */
 
-int _strlen(char *s)
+unsigned int _strlen(char *s)
 {
 	int length = 0;
 
