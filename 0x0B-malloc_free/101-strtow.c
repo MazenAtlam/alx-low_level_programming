@@ -39,14 +39,12 @@ char **strtow(char *str)
 
 	if (str == NULL || str[0] == '\0' || words == 0)
 		return (NULL);
-
 	s = malloc((words + 1) * sizeof(*s));
 	if (s == NULL)
 		return (NULL);
-
 	for (i = 0, k = 0; str[i] != '\0'; i++)
 	{
-		while (str[i] == 32)
+		while (str[i] == 32 && str[i] != '\0')
 			i++;
 		init = i;
 		for (length = 0; str[i] != 32; i++, length++)
@@ -70,6 +68,8 @@ char **strtow(char *str)
 			s[k][j] = '\0';
 			k++;
 		}
+		if (str[i] == '\0')
+			break;
 	}
 	s[k] = 0;
 
