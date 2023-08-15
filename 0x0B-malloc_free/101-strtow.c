@@ -46,7 +46,7 @@ char **strtow(char *str)
 
 	for (i = 0, k = 0; str[i] != '\0'; i++)
 	{
-		while (str[i] == 32 && str[i] != '\0')
+		while (str[i] == 32)
 			i++;
 		init = i;
 		for (length = 0; str[i] != 32; i++, length++)
