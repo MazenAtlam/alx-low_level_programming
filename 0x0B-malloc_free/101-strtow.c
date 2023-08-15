@@ -49,8 +49,11 @@ char **strtow(char *str)
 		while (str[i] == 32)
 			i++;
 		init = i;
-		for (length = 0; str[i] != 32 && str[i] != '\0'; i++, length++)
-				;
+		for (length = 0; str[i] != 32; i++, length++)
+		{
+			if (str[i] == '\0')
+				break;
+		}
 		if (length > 0)
 		{
 			s[k] = malloc((length + 1) * sizeof(char));
