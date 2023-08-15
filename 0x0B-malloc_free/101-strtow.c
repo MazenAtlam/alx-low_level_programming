@@ -17,7 +17,7 @@ int word_counter(char *str)
 		if (str[i] != 32)
 		{
 			words++;
-			while (str[i] != 32)
+			while (str[i] != 32 && str[i] != '\0')
 				i++;
 		}
 	}
