@@ -34,19 +34,19 @@ int word_counter(char *str)
 
 char **strtow(char *str)
 {
-	int i, j, k, init, length = 0;
+	int i, j, k, init, length = 0, words = word_counter(str);
 	char **s;
 
-	if (str == NULL || str[0] == '\0')
+	if (str == NULL || str[0] == '\0' || words == 0)
 		return (NULL);
 
-	s = malloc((word_counter(str) + 1) * sizeof(*s));
+	s = malloc((words + 1) * sizeof(*s));
 	if (s == NULL)
 		return (NULL);
 
 	for (i = 0, k = 0; str[i] != '\0'; i++)
 	{
-		while (str[i] == 32)
+		while (str[i] == 32 && str[i] != '\0')
 			i++;
 		init = i;
 		for (length = 0; str[i] != 32; i++, length++)
@@ -71,7 +71,7 @@ char **strtow(char *str)
 			k++;
 		}
 	}
-	s[k] = NULL;
+	s[k] = 0;
 
 	return (s);
 }
