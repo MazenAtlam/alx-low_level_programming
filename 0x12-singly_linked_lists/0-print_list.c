@@ -2,12 +2,11 @@
 #include <stdio.h>
 
 /**
- * _strlen A function that gets the length of a string
+ * _strlen - A function that gets the length of a string
  * @str: The string
  *
  * Return: The length of the string
-*/
-
+ */
 unsigned int _strlen(const char *str)
 {
 	unsigned int i = 0;
