@@ -3,23 +3,6 @@
 #include <string.h>
 
 /**
- * _strlen - A function that gets the length of a string
- * @str: The string
- *
- * Return: The length of the string
-*/
-
-unsigned int _strlen(const char *str)
-{
-	unsigned int i = 0;
-
-	while (str[i] != '\0' && str != NULL)
-		i++;
-
-	return (i);
-}
-
-/**
  * add_node - A function that adds a new node at the beginning of a list_t list
  * @head: The beginnig of the list
  * @str: The string to be stored in the new node
