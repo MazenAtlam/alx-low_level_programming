@@ -36,7 +36,7 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned int len = binary_len(n);
 
-	if (index >= len)
+	if (index > len)
 		return (-1);
 
 	while (index != 0)
