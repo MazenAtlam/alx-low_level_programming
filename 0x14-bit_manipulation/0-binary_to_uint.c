@@ -24,17 +24,19 @@ unsigned int pow(unsigned int base, unsigned int power)
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int i, uint = 0;
+	unsigned int j, i = 0, uint = 0;
 
 	if (b == NULL)
 		return (0);
 
-	for (i = 0; b[i] != '\0'; i++)
+	while (b[i] != '\0')
+		i++;
+	for (i = i - 1, j = 0; i >= 0; i--, j++)
 	{
 		if (b[i] != 48 && b[i] != 49)
 			return (0);
 
-		uint += pow(2, i) * (b[i] - 48);
+		uint += pow(2, j) * (b[i] - 48);
 	}
 
 	return (uint);
