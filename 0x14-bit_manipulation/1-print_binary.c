@@ -37,7 +37,7 @@ void print_binary(unsigned long int n)
 
 	while (bit_pos >= 0)
 	{
-		if ((n & (1 << bit_pos)) != 0)
+		if ((n & (1L << bit_pos)) != 0)
 			_putchar('1');
 		else
 			_putchar('0');
