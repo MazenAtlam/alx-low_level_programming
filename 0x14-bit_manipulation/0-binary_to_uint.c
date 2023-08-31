@@ -1,18 +1,18 @@
 #include "main.h"
 
 /**
- * pow - A function that computes the power of a number
+ * power - A function that computes the power of a number
  * @base: The base number
- * @power: The power that raised to
+ * @pwr: The power that raised to
  *
  * Return: The result of the power function
  */
-unsigned int pow(unsigned int base, unsigned int power)
+unsigned int power(unsigned int base, unsigned int pwr)
 {
-	if (power == 0)
+	if (pwr == 0)
 		return (1);
 
-	return (base * pow(base, power - 1));
+	return (base * power(base, pwr - 1));
 }
 
 /**
@@ -24,7 +24,8 @@ unsigned int pow(unsigned int base, unsigned int power)
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int j, i = 0, uint = 0;
+	int j, i = 0;
+	unsigned int uint = 0;
 
 	if (b == NULL)
 		return (0);
@@ -36,7 +37,7 @@ unsigned int binary_to_uint(const char *b)
 		if (b[i] != 48 && b[i] != 49)
 			return (0);
 
-		uint += pow(2, j) * (b[i] - 48);
+		uint += power(2, j) * (b[i] - 48);
 	}
 
 	return (uint);
