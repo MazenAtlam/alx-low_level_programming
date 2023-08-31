@@ -9,13 +9,17 @@
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned int i, count = 0;
+	unsigned int i, count = 0, point = 1;
 
 	for (i = 0; i < 64; i++)
 	{
 		if ((n & (1 << i)) != (m & (1 << i)))
-			count++;
+		{
+			if (point != 0)
+				count++;
+			point = !point;
+		}
 	}
 
-	return (count / 2);
+	return (count);
 }
