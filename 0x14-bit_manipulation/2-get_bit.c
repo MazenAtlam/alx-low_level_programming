@@ -13,6 +13,9 @@ unsigned int binary_len(unsigned long int n)
 	if (n == 0 || n == 1)
 		return (1);
 
+	if ((long int) n < 0)
+		return (64);
+
 	while (n != 0)
 	{
 		length++;
@@ -36,11 +39,5 @@ int get_bit(unsigned long int n, unsigned int index)
 	if (index >= len)
 		return (-1);
 
-	while (index != 0)
-	{
-		n = n >> 1;
-		index--;
-	}
-
-	return (n & 1);
+	return (n & (1L << index));
 }
