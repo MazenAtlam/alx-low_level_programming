@@ -6,12 +6,15 @@
  *
  * Return: The length
  */
-int binary_len(unsigned long int n)
+long int binary_len(unsigned long int n)
 {
-	int length = 0;
+	long int length = 0;
 
 	if (n == 0 || n == 1)
 		return (1);
+
+	if ((long int) n < 0)
+		return (64);
 
 	while (n != 0)
 	{
@@ -30,7 +33,7 @@ int binary_len(unsigned long int n)
  */
 void print_binary(unsigned long int n)
 {
-	int bit_pos = binary_len(n) - 1;
+	long int bit_pos = binary_len(n) - 1;
 
 	while (bit_pos >= 0)
 	{
