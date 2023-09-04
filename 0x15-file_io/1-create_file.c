@@ -1,6 +1,24 @@
 #include "main.h"
 
 /**
+ * _strlen - A function that computes the length of a string
+ * @str: The string
+ *
+ * Return: The length
+ */
+ssize_t _strlen(char *str)
+{
+	ssize_t length = 0;
+
+	if (str == NULL || str[0] == '\0')
+		return (0);
+	while (str[length] != '\0')
+		length++;
+
+	return (length);
+}
+
+/**
  * create_file - A function that creates a file
  * @filename: The file name
  * @text_content: The string to be written into the file
