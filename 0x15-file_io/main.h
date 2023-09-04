@@ -1,6 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
-#define buffer_size 1024
+#define buff_size 1024
 
 #include <stddef.h>
 #include <unistd.h>
