@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 {
 	char *file_from = argv[1], *file_to = argv[2];
 	char buffer[BUFF_SIZE];
-	int fptr_from, fptr_to, no_close, bytes_from = 0, bytes_to = 0;
+	int fptr_from, fptr_to, no_close, bytes_from = 1024, bytes_to = 1024;
 
 	if (argc != 3)
 	{
@@ -31,14 +31,14 @@ int main(int argc, char *argv[])
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		exit(99);	}
-	while (bytes_from != EOF)
+	while (bytes_from > 0)
 	{
 		bytes_from = read(fptr_from, buffer, BUFF_SIZE);
 		if (bytes_from == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 			exit(98);	}
-		bytes_to = write(fptr_to, buffer, BUFF_SIZE);
+		bytes_to = write(fptr_to, buffer, bytes_from);
 		if (bytes_to != bytes_from)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
