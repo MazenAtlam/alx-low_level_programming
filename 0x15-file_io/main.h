@@ -1,8 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
-#define buff_size 1024
 
-#include <stddef.h>
+#include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
 
