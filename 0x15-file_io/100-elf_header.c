@@ -2,14 +2,12 @@
 
 /**
  * main - Entry point
- * @ac: The number of arguments
- * @av: pointers to this arguments
  *
  * Description: Empty
  *
  * Return: 98 (on error)
  */
-int main(int ac, char *av[])
+int main(void)
 {
 	return (98);
 }
