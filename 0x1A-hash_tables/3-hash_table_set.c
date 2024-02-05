@@ -58,7 +58,7 @@ void free_item(hash_node_t *item)
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *new_item, *current_item;
+	hash_node_t *new_item;
 	unsigned long int index;
 
 	if (!ht || !ht->array || ht->size == 0 || !key || key[0] == '\0')
@@ -72,18 +72,17 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 
 	index = key_index((const unsigned char *) key, ht->size);
-	current_item = ht->array[index];
-	if (!current_item)
-		current_item = new_item;
-	else if (strcmp(current_item->key, key) == 0)
+	if (!ht->array[index])
+		ht->array[index] = new_item;
+	else if (strcmp(ht->array[index]->key, key) == 0)
 	{
-		strcpy(current_item->value, value);
+		strcpy(ht->array[index]->value, value);
 		free_item(new_item);
 	}
 	else
 	{
-		new_item->next = current_item;
-		current_item = new_item;
+		new_item->next = ht->array[index];
+		ht->array[index] = new_item;
 	}
 
 	return (1);
